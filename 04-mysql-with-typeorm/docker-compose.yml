@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  mysql:
+    image: mysql:8.0.21
+    # command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=general-user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=wallet_payment_service
+    ports:
+      - target: 3306
+        published: 3306
+        mode: host
